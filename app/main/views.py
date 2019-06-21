@@ -11,8 +11,6 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-
-    # Getting popular movie
     usa_news = get_news('us')
     australia_news = get_news('au')
     sa_news = get_news('za')
