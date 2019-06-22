@@ -1,27 +1,22 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html'%}
 
-<head>
-    <title>News Highlight</title>
-</head>
-<h1> Hello World </h1>
-
-<div class="container space">
-        <div class="row">
-            <div class="col-md-12">
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
             <h3 class="title"><b> News Sources </b></h3>
-            </div>
 
-            {% for news_sources in sources %}
-            
-            <div class="col-sm-4 cardi w3-sand">
-                <p class="text"><a href="/article/{{news_sources.id}}" target="_blank">{{ news_sources.name}}</a></p>
-                  <!-- Click to view the articles -->
-                  <p>{{news_sources.description}}</p>
-              
-            </div>
-            {% endfor %}
         </div>
-    </div>
+        {% for source in sources %}
 
-</html>
+        <div class="col-sm-4 card w3-sand">
+            <p class="text"><a href="/article/{{source.id}}" target="_blank">{{source.name}}</a></p>
+            <!-- Click to view the articles -->
+            <p>{{source.description}}</p>
+
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock%}
