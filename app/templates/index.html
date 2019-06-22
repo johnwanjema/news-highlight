@@ -1,51 +1,9 @@
-{% import 'macros.html' as macro%}
-{% extends 'base.html'%}
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="utf-8">
-    {% if title %}
-    <title> {{ title }}</title>
-    {% else %}
-    <title> Welcome to my news websites </title>
-    {% endif %}
+    <title>News Highlight</title>
 </head>
-
-<body>
-    {% block styles%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-    {% endblock %}
-
-    <!-- Content block -->
-    {% block content %}
-
-
-    <!-- USA news -->
-    <section>
-        <h3> Popular Movies</h3>
-        <ul>
-            {{ macro.displayNewsList(us)}}
-        </ul>
-    </section>
-    <!-- AUSTRALIA  -->
-    <section>
-        <h3> Upcoming Movies </h3>
-        <ul> -->
-            {{ macro.displayNewsList(au)}}
-        </ul>
-    </section>
-    <!-- SA news -->
-    <section>
-        <h3>Now Showing</h3>
-        <ul>
-            {{ macro.displayNewsList(za)}}
-        </ul>
-    </section>
-
-
-    {% endblock%}
-</body>
+<h1> Hello World </h1>
 
 </html>

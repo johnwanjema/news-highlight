@@ -8,25 +8,24 @@ base_url = None
 
 def configure_request(app):
     global api_key,base_url
-    api_key = app.config['MOVIE_API_KEY']
-    base_url = app.config['MOVIE_API_BASE_URL']
+    api_key = app.config['NEWS_API_KEY']
+    base_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=03d3f69ba4844b8e94dc1582f0dc69b9'
 
 
 def get_news(category):
     '''
     Function that gets the json responce to our url request
     '''
-    get_news_url = base_url.format(category,api_key)
+    get_news_url = base_url
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
 
-        news_results = None
-
-        if get_news_response['results']:
-            news_results_list = get_news_response['results']
-            news_results = process_news(news_results_list)
+        news_results = None           
+            
+        # news_results_list = get_news_response['results']
+        news_results = process_news(news_results)
 
 
     return news_results
