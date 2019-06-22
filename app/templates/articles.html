@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+
+<!-- Styles block -->
+<!--Block content-->
+{% block content %}
+<div class="container move">
+    <h2 class="artitle"> News Articles </h2>
+    <div class="row">
+
+        {% for article in article %}
+        <section class="col-sm-6 card w3-sand">
+            <hr>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" height="200px" src="{{article.urlToImage}}" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">{{article.title}}</h4>
+                    <p>Published at {{article.publishedAt}}</p>
+                    <a href="{{article.url}}" class="btn btn-primary">Read Full story</a>
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+
+
+    </div>
+</div>
+
+{% endblock %}
