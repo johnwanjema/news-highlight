@@ -1,29 +1,27 @@
-from flask import render_template,request,redirect,url_for
+from flask import render_template
 from . import main
-from ..requests import get_news ,process_news
+from ..requests import get_sources,get_article
+from ..models import Sources,Articles
 
-
+# Views
 @main.route('/')
 def index():
 
     '''
     View root page function that returns the index page and its data
     '''
-    return render_template('index.html')
+    news_sources = get_sources()
+   
+    title= "Get the latest news"
+    return render_template('index.html', title = title, sources = news_sources)
 
+@main.route('/article/<article_id>')
+def article(article_id):
 
-# Views
+    '''
+    View article page function that returns the article details page and its data
+    '''
+    article = get_article(article_id)
+    title = f'{article_id}'
 
-# def index():
-
-#     '''
-#     View root page function that returns the index page and its data
-#     '''
-#     usa_news = get_news('us')
-#     australia_news = get_news('au')
-#     sa_news = get_news('za')
-
-#     title = 'news website'
-#     message = 'wanjema'
-
-#     return render_template('index.html', title = title ,message = message )
+    return render_template('article.html',title = title, myarticle = article, name=article_id)

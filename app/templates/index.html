@@ -6,4 +6,22 @@
 </head>
 <h1> Hello World </h1>
 
+<div class="container space">
+        <div class="row">
+            <div class="col-md-12">
+            <h3 class="title"><b> News Sources </b></h3>
+            </div>
+
+            {% for news_sources in sources %}
+            
+            <div class="col-sm-4 cardi w3-sand">
+                <p class="text"><a href="/article/{{news_sources.id}}" target="_blank">{{ news_sources.name}}</a></p>
+                  <!-- Click to view the articles -->
+                  <p>{{news_sources.description}}</p>
+              
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
 </html>
