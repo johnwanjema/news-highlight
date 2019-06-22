@@ -2,19 +2,19 @@
 
 {% block content %}
 <div class="container">
+
     <div class="row">
-        <div class="col-md-4">
-            <h3 class="title"><b> News Sources </b></h3>
-
-        </div>
+        <h3 class="title"><b> News Sources </b></h3>
         {% for source in sources %}
-
-        <div class="col-sm-4 card w3-sand">
-            <p class="text"><a href="/article/{{source.id}}" target="_blank">{{source.name}}</a></p>
-            <!-- Click to view the articles -->
-            <p>{{source.description}}</p>
-
-        </div>
+        <section class="col-sm-4 card w3-sand">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h2 class="card-title">{{source.name}}</h2>
+                    <p class="card-text">{{source.description | truncate}}</p>
+                    <a href="/article/{{source.id}}" class="btn btn-primary">Articles</a>
+                </div>
+            </div>
+        </section>
         {% endfor %}
 
     </div>
