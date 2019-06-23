@@ -1,10 +1,10 @@
-# news-highlight
+# News-highlight
 
-#### This app saves passwords, 6/15/2019
+#### This app displays news sources and thier articles
 
-#### _Created by John Wanjema_
+#### Created by _John Wanjema_
 
-### current Version 1.0
+### current Version 1.0 6/23/2019
 
 ## Description
 
@@ -15,15 +15,15 @@ This is an application that lists and preview news articles from various sources
 You need a web browser installed on your machine to run this program
 Clone the repository to your local machine from the online repository(https://github.com/johnwanjema/news-highlight)
 
-## live site
+## Live site
 
 ## Technologies Used
 
 created application using
 
 - Python
-- Booystrap
-- css
+- Bootstrap
+- Css
 
 ## Behaviour Driven Devlopment(BDD)
 
@@ -39,7 +39,7 @@ phone number:0721273839 for inquries and contributions.
 
 ## License
 
-LICENSE(<https://github.com/johnwanjema/news-highlight/blob/master/LICENSE)>
+LICENSE(https://github.com/johnwanjema/news-highlight/blob/master/LICENSE)
 
 ## Acknowledgments
 
