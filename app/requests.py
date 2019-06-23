@@ -47,7 +47,6 @@ def process_results(sources_list):
         description = sources_item.get('description')
         url = sources_item.get('url')
 
-
         source_object= Sources(id, name, description,url)
         sources_results.append(source_object)
 
